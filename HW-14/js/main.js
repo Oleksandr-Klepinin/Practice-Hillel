@@ -1,48 +1,41 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
+    const todosWrapper = document.querySelector(`.${todosWrapperClassName}`);
+    const form = document.querySelector(`.${formClassName}`);
+
     loadTasks();
 
-    document.querySelector('.js--form').addEventListener('submit', (event) => {
-        event.preventDefault();
-        addTask();
-    });
-
-    document.querySelector('.js--todos-wrapper').addEventListener('change', (event) => {
-        const checkbox = event.target;
-        if (checkbox.type === 'checkbox') {
-            const todoItem = checkbox.closest('.todo-item');
-            toggleTaskStatus(checkbox, todoItem);
-            saveTasks();
-        }
-    });
-
-    document.querySelector('.js--todos-wrapper').addEventListener('click', (event) => {
-        const deleteButton = event.target;
-        if (deleteButton.classList.contains('todo-item__delete')) {
-            const todoItem = deleteButton.closest('.todo-item');
-            deleteTask(todoItem);
-            saveTasks();
-        }
-    });
+    form.addEventListener('submit', addTask);
+    todosWrapper.addEventListener('change', handleCheckboxChange);
+    todosWrapper.addEventListener('click', handleDeleteButtonClick);
 });
 
-function addTask() {
-    const inputValue = document.querySelector('.js--form__input').value.trim();
+const formClassName = 'js--form';
+const todoItemClassName = 'todo-item';
+const deleteButtonClassName = 'todo-item__delete';
+const todosWrapperClassName = 'js--todos-wrapper';
+const checkedClassName = 'todo-item--checked';
+const deleteCheckedClassName = 'delete--checked';
+
+function addTask(event) {
+    event.preventDefault();
+    const inputValue = document.querySelector(`.${formClassName}__input`).value.trim();
+
     if (inputValue !== '') {
-        const taskList = document.querySelector('.js--todos-wrapper');
+        const taskList = document.querySelector(`.${todosWrapperClassName}`);
         const newTask = createTaskElement(inputValue);
         taskList.appendChild(newTask);
         saveTasks();
-        document.querySelector('.js--form__input').value = '';
+        event.target.reset();
     }
 }
 
-function createTaskElement(taskText) {
+function createTaskElement(taskText, isChecked = false) {
     const li = document.createElement('li');
-    li.className = 'todo-item';
+    li.className = todoItemClassName;
 
-    const checkbox = createCheckbox();
+    const checkbox = createCheckbox(isChecked);
     const span = createSpan(taskText);
     const deleteButton = createDeleteButton();
 
@@ -53,9 +46,11 @@ function createTaskElement(taskText) {
     return li;
 }
 
-function createCheckbox() {
+function createCheckbox(isChecked) {
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
+    checkbox.checked = isChecked;
+    checkbox.addEventListener('change', handleCheckboxChange);
     return checkbox;
 }
 
@@ -68,34 +63,45 @@ function createSpan(taskText) {
 
 function createDeleteButton() {
     const deleteButton = document.createElement('button');
-    deleteButton.className = 'todo-item__delete';
+    deleteButton.className = deleteButtonClassName;
     deleteButton.textContent = 'Delete';
     return deleteButton;
 }
 
-function toggleTaskStatus(checkbox, todoItem) {
-    const description = todoItem.querySelector('.todo-item__description');
-    const deleteButton = todoItem.querySelector('.todo-item__delete');
-
-    if (checkbox.checked) {
-        todoItem.classList.add('todo-item--checked');
-        description.classList.add('todo-item__description--checked');
-        deleteButton.classList.add('delete--checked');
-    } else {
-        todoItem.classList.remove('todo-item--checked');
-        description.classList.remove('todo-item__description--checked');
-        deleteButton.classList.remove('delete--checked');
-    }
-}
-
-function deleteTask(todoItem) {
-    todoItem.remove();
+function handleCheckboxChange(event) {
+    const checkbox = event.target;
+    const todoItem = checkbox.closest(`.${todoItemClassName}`);
+    toggleTaskStatus(checkbox, todoItem);
     saveTasks();
 }
 
+function handleDeleteButtonClick(event) {
+    const deleteButton = event.target;
+    if (deleteButton.classList.contains(deleteButtonClassName)) {
+        const todoItem = deleteButton.closest(`.${todoItemClassName}`);
+        todoItem.remove();
+        saveTasks();
+    }
+}
+
+function toggleTaskStatus(checkbox, todoItem) {
+    const description = todoItem.querySelector('.todo-item__description');
+    const deleteButton = todoItem.querySelector(`.${deleteButtonClassName}`);
+
+    if (checkbox.checked) {
+        todoItem.classList.add(checkedClassName);
+        description.classList.add('todo-item__description--checked');
+        deleteButton.classList.add(deleteCheckedClassName);
+    } else {
+        todoItem.classList.remove(checkedClassName);
+        description.classList.remove('todo-item__description--checked');
+        deleteButton.classList.remove(deleteCheckedClassName);
+    }
+}
+
 function saveTasks() {
-    const taskList = document.querySelector('.js--todos-wrapper');
-    const tasks = Array.from(taskList.querySelectorAll('.todo-item')).map((taskItem) => ({
+    const taskList = document.querySelector(`.${todosWrapperClassName}`);
+    const tasks = Array.from(taskList.querySelectorAll(`.${todoItemClassName}`)).map((taskItem) => ({
         description: taskItem.querySelector('.todo-item__description').textContent,
         checked: taskItem.querySelector('input[type="checkbox"]').checked
     }));
@@ -104,20 +110,14 @@ function saveTasks() {
 }
 
 function loadTasks() {
-    const taskList = document.querySelector('.js--todos-wrapper');
+    const taskList = document.querySelector(`.${todosWrapperClassName}`);
     const savedTasks = localStorage.getItem('tasks');
 
     if (savedTasks) {
         const tasks = JSON.parse(savedTasks);
         tasks.forEach((task) => {
-            const newTask = createTaskElement(task.description);
-            const checkbox = newTask.querySelector('input[type="checkbox"]');
+            const newTask = createTaskElement(task.description, task.checked);
             taskList.appendChild(newTask);
-
-            if (task.checked) {
-                checkbox.checked = true;
-                toggleTaskStatus(checkbox, newTask);
-            }
         });
     }
 }
