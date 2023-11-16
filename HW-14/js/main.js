@@ -36,7 +36,7 @@ function createTaskElement(taskText, isChecked = false) {
     li.className = todoItemClassName;
 
     const checkbox = createCheckbox(isChecked);
-    const span = createSpan(taskText);
+    const span = createSpan(taskText, isChecked);
     const deleteButton = createDeleteButton();
 
     li.appendChild(checkbox);
@@ -50,14 +50,18 @@ function createCheckbox(isChecked) {
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.checked = isChecked;
-    checkbox.addEventListener('change', handleCheckboxChange);
     return checkbox;
 }
 
-function createSpan(taskText) {
+function createSpan(taskText, isChecked) {
     const span = document.createElement('span');
     span.className = 'todo-item__description';
     span.textContent = taskText;
+
+    if (isChecked) {
+        span.style.textDecoration = 'line-through';
+    }
+
     return span;
 }
 
@@ -65,6 +69,7 @@ function createDeleteButton() {
     const deleteButton = document.createElement('button');
     deleteButton.className = deleteButtonClassName;
     deleteButton.textContent = 'Delete';
+    deleteButton.addEventListener('click', handleDeleteButtonClick);
     return deleteButton;
 }
 
@@ -92,10 +97,12 @@ function toggleTaskStatus(checkbox, todoItem) {
         todoItem.classList.add(checkedClassName);
         description.classList.add('todo-item__description--checked');
         deleteButton.classList.add(deleteCheckedClassName);
+        description.style.textDecoration = 'line-through';
     } else {
         todoItem.classList.remove(checkedClassName);
         description.classList.remove('todo-item__description--checked');
         deleteButton.classList.remove(deleteCheckedClassName);
+        description.style.textDecoration = 'none';
     }
 }
 
