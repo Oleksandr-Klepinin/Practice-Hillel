@@ -7,8 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     loadTasks();
 
     form.addEventListener('submit', addTask);
-    todosWrapper.addEventListener('change', handleCheckboxChange);
-    todosWrapper.addEventListener('click', handleDeleteButtonClick);
 });
 
 const formClassName = 'js--form';
@@ -37,7 +35,7 @@ function createTaskElement(taskText, isChecked = false) {
 
     const checkbox = createCheckbox(isChecked);
     const span = createSpan(taskText, isChecked);
-    const deleteButton = createDeleteButton();
+    const deleteButton = createDeleteButton(li);
 
     li.appendChild(checkbox);
     li.appendChild(span);
@@ -50,6 +48,7 @@ function createCheckbox(isChecked) {
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.checked = isChecked;
+    checkbox.addEventListener('change', handleCheckboxChange);
     return checkbox;
 }
 
@@ -65,11 +64,11 @@ function createSpan(taskText, isChecked) {
     return span;
 }
 
-function createDeleteButton() {
+function createDeleteButton(todoItem) {
     const deleteButton = document.createElement('button');
     deleteButton.className = deleteButtonClassName;
     deleteButton.textContent = 'Delete';
-    deleteButton.addEventListener('click', handleDeleteButtonClick);
+    deleteButton.addEventListener('click', () => handleDeleteButtonClick(todoItem));
     return deleteButton;
 }
 
@@ -80,13 +79,9 @@ function handleCheckboxChange(event) {
     saveTasks();
 }
 
-function handleDeleteButtonClick(event) {
-    const deleteButton = event.target;
-    if (deleteButton.classList.contains(deleteButtonClassName)) {
-        const todoItem = deleteButton.closest(`.${todoItemClassName}`);
-        todoItem.remove();
-        saveTasks();
-    }
+function handleDeleteButtonClick(todoItem) {
+    todoItem.remove();
+    saveTasks();
 }
 
 function toggleTaskStatus(checkbox, todoItem) {
