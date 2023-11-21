@@ -114,26 +114,26 @@ function FormValidate(form) {
         }
     };
 
-    this.disableFormFields = function () {
-        for (let i = 0; i < this.elements.length; i++) {
-            const element = this.elements[i];
-            if (element.type !== 'submit') {
-                element.disabled = true;
-            }
-        }
-
-        const submitButton = this.form.querySelector('[type="submit"]');
-        if (submitButton) {
-            submitButton.disabled = true;
-        }
-    };
-
     this.displayFormData = function () {
         console.log("Success! Form data:", this.getFormValues());
         console.log("Form method:", form.method);
         console.log("Form action:", form.action);
     };
 }
+
+FormValidate.prototype.disableFormFields = function () {
+    for (let i = 0; i < this.elements.length; i++) {
+        const element = this.elements[i];
+        if (element.type !== 'submit') {
+            element.disabled = true;
+        }
+    }
+
+    const submitButton = this.form.querySelector('[type="submit"]');
+    if (submitButton) {
+        submitButton.disabled = true;
+    }
+};
 
 document.addEventListener('DOMContentLoaded', function () {
     const regForm = new FormValidate(document.querySelector('.js--reg_form'));
