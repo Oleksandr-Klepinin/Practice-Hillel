@@ -5,6 +5,14 @@ body {
     background-color: #f0f8ff;
 }
 
+#date-time {
+    font-weight: bold;
+}
+
+#last-update-time {
+    font-size: 14px;
+}
+
 #weather-widget {
     position: fixed;
     top: 10px;

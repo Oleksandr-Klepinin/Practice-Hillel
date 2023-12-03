@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
         windSpeed: document.getElementById('wind-speed'),
         windDirection: document.getElementById('wind-direction'),
         weatherIcon: document.getElementById('weather-icon'),
+        dateTime: document.getElementById('date-time'),
         lastUpdateTime: document.getElementById('last-update-time')
     };
 
@@ -18,6 +19,24 @@ document.addEventListener('DOMContentLoaded', function () {
         apiUrl: 'https://api.openweathermap.org/data/2.5/weather',
         units: 'metric'
     };
+
+    function updateDateTime() {
+        const currentDate = new Date();
+        const formattedDateTime = currentDate.toLocaleString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+            hour12: true
+        });
+        updateElementText(elements.dateTime, formattedDateTime);
+    }
+
+    function startClock() {
+        setInterval(updateDateTime, 1000);
+    }
 
     async function fetchData() {
         const url = `${config.apiUrl}?q=${config.city}&units=${config.units}&appid=${config.apiKey}`;
@@ -74,5 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    updateDateTime();
+    startClock();
     updateWeather();
 });
