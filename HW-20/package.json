@@ -1,0 +1,14 @@
+{
+  "name": "hw-20",
+  "version": "1.0.0",
+  "description": "catalog",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Oleksandr Klepinin",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.7.1"
+  }
+}
