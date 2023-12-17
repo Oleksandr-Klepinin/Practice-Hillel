@@ -11,14 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const idBlock = document.getElementById('idBlock');
     const controllerBlock = document.getElementById('controllerBlock');
 
-    function showSpinner() {
-        spinner.style.display = 'block';
-    }
-
-    function hideSpinner() {
-        spinner.style.display = 'none';
-    }
-
     function displayResult({ id, controller, data }) {
         idBlock.textContent = `id: ${id}`;
         controllerBlock.textContent = `controller: ${controller}`;
@@ -50,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const endpoint = input.value.trim();
 
         if (endpoint !== '') {
-            showSpinner();
+            spinner.style.display = 'block';
 
             try {
                 const data = await fetchDataFromAPI(endpoint);
@@ -59,12 +51,10 @@ document.addEventListener('DOMContentLoaded', function () {
             } catch (error) {
                 console.error(error.message);
             } finally {
-                hideSpinner();
+                spinner.style.display = 'none';
             }
         } else {
-            resultContainer.textContent = '';
-            idBlock.textContent = 'id: ';
-            controllerBlock.textContent = 'controller: ';
+            displayResult({ id: '', controller: '', data: {} });
         }
     }
 

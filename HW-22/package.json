@@ -2,7 +2,7 @@
   "name": "hw-22",
   "version": "1.0.0",
   "description": "SWAPI",
-  "main": "index.html",
+  "main": "index.js",
   "scripts": {
     "start": "webpack serve --mode development --open",
     "build": "webpack --mode production"
@@ -11,6 +11,7 @@
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^6.8.1",
+    "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.4",
     "mini-css-extract-plugin": "^2.7.6",
     "node-sass": "^9.0.0",
