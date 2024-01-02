@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Twenty third page</title>
+    <link rel="stylesheet" href="./build/main.css">
+</head>
+<body>
+<div class="container">
+    <div class="mb-3 p-2">
+        <button type="button" id="get" class="btn btn-primary">GET</button>
+        <button type="button" id="get_id" class="btn btn-primary">GET by id</button>
+        <button type="button" id="post" class="btn btn-secondary">POST</button>
+        <button type="button" id="put_id" class="btn btn-secondary">PUT by id</button>
+        <button type="button" id="delete_id" class="btn btn-warning">DELETE by id</button>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <label for="todo_text" class="form-label">Todo text</label>
+            <input type="text" class="form-control" id="todo_text">
+        </div>
+        <div class="col-6">
+            <label for="todo_id" class="form-label">Todo id</label>
+            <input type="text" class="form-control" id="todo_id">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <div style="background: #fff" class="p-2 m-2 col-xl-6">
+                <label class="form-label">Global data</label>
+                <pre id="response1"></pre>
+            </div>
+        </div>
+        <div class="col-6">
+            <div style="background: #fff" class="p-2 m-2">
+                <label class="form-label">ID data</label>
+                <pre id="response2"></pre>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="build/app.js"></script>
+</body>
+</html>
