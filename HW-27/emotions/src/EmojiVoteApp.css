@@ -1,0 +1,42 @@
+.emoji-vote-app {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+button {
+    margin-left: 10px;
+}
+
+li span {
+    font-size: 10em;
+}
+
+.action-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.winner-section {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #2196f3;
+    color: white;
+    border-radius: 5px;
+}
