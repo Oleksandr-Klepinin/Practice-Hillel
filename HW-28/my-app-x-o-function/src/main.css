@@ -1,0 +1,75 @@
+body {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.board {
+  width: 300px;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: auto;
+}
+
+.board-row {
+  display: flex;
+  justify-content: center;
+}
+
+.square {
+  width: 60px;
+  height: 60px;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  margin: -1px -1px 0 0;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.square:hover {
+  background-color: #f0f0f0;
+}
+
+.status {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.status::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.new-game-button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.new-game-button:hover {
+  background-color: #45a049;
+}
+
+.winning-square {
+  background-color: #aaffaa;
+  border: 2px solid #00aa00;
+  box-shadow: 0 0 10px #00aa00;
+}
