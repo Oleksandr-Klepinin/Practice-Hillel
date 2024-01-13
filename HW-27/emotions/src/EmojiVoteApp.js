@@ -1,5 +1,9 @@
-import React, { useEffect, useReducer, useMemo } from 'react';
+import React, { useEffect, useReducer, useCallback } from 'react';
 import './EmojiVoteApp.css';
+
+const VOTE_TITLE = "Vote for the Best Emoji";
+const WINNER_TITLE = "Winner:";
+const emojiStyle = { fontSize: '2em' };
 
 const initialState = {
     emojis: [
@@ -49,29 +53,27 @@ const EmojiVoteApp = () => {
         localStorage.setItem('emojiVotes', JSON.stringify(state.emojis));
     }, [state.emojis]);
 
-    const handleVote = (emojiId) => {
+    const handleVote = useCallback((emojiId) => {
         dispatch({ type: 'VOTE', payload: emojiId });
-    };
+    }, []);
 
-    const handleShowResults = () => {
+    const handleShowResults = useCallback(() => {
         dispatch({ type: 'SHOW_RESULTS' });
-    };
+    }, []);
 
-    const handleClearResults = () => {
+    const handleClearResults = useCallback(() => {
         dispatch({ type: 'CLEAR_RESULTS' });
-    };
-
-    const memoizedEmojis = useMemo(() => state.emojis, [state.emojis]);
+    }, []);
 
     return (
         <div className="emoji-vote-app">
-            <h1>Vote for the Best Emoji</h1>
+            <h1>{VOTE_TITLE}</h1>
             <ul>
-                {memoizedEmojis.map((emoji) => (
+                {state.emojis.map((emoji) => (
                     <li key={emoji.id}>
-            <span role="img" aria-label={`Emoji ${emoji.symbol}`} style={{ fontSize: '2em' }}>
-              {emoji.symbol}
-            </span>
+                        <span role="img" aria-label={`Emoji ${emoji.symbol}`} style={emojiStyle}>
+                            {emoji.symbol}
+                        </span>
                         - {emoji.count} votes
                         <button onClick={() => handleVote(emoji.id)}>Vote</button>
                     </li>
@@ -86,11 +88,11 @@ const EmojiVoteApp = () => {
 
             {state.showResults && (
                 <div className="winner-section">
-                    <h2>Winner:</h2>
+                    <h2>{WINNER_TITLE}</h2>
                     <div>
-            <span role="img" aria-label={`Emoji ${state.winner.symbol}`} style={{ fontSize: '2em' }}>
-              {state.winner.symbol}
-            </span>
+                        <span role="img" aria-label={`Emoji ${state.winner.symbol}`} style={emojiStyle}>
+                            {state.winner.symbol}
+                        </span>
                         - {state.winner.count} votes
                     </div>
                 </div>
