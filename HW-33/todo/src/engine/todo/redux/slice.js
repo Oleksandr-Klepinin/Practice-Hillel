@@ -1,4 +1,3 @@
-// import { v4 as uuidv4 } from 'uuid';
 import { createSlice } from '@reduxjs/toolkit'
 
 const slice = createSlice({
@@ -13,6 +12,9 @@ const slice = createSlice({
         },
         addItem: (state, action) => {
             state.items.push(action.payload)
+        },
+        deleteItem: (state, action) => {
+            state.items = state.items.filter(item => item !== action.payload);
         },
         setLoading: (state, action) => {
             state.loading = action.payload
