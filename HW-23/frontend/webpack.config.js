@@ -11,7 +11,7 @@ module.exports = {
     // devtool: 'source-map',
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'app.js'
+        filename: 'shared.js'
     },
     module: {
         rules: [
