@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const formClassName = 'js--form';
 const todoItemClassName = 'todo-item';
 const deleteButtonClassName = 'todo-item__delete';
-const todosWrapperClassName = 'js--todos-wrapper';
+const todosWrapperClassName = 'js--data-wrapper';
 const checkedClassName = 'todo-item--checked';
 const deleteCheckedClassName = 'delete--checked';
 

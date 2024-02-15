@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { setFilter } from '../../../engine/todos/todosSlice.js';
+import { setFilter } from '../../../core/data/todosSlice.js';
 import { ButtonGroup, Button } from '@mui/material';
 
 const Filter = () => {

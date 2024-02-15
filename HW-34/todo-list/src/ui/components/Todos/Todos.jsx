@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addTodo, toggleTodo, deleteTodoById, deleteAllTodos, deleteTodo } from '../../../engine/todos/todosSlice.js';
-import { selectFilteredTodos } from '../../../engine/todos/todosSelectors.js';
+import { addTodo, toggleTodo, deleteTodoById, deleteAllTodos, deleteTodo } from '../../../core/data/todosSlice.js';
+import { selectFilteredTodos } from '../../../core/data/todosSelectors.js';
 import AddTodo from './AddTodo.jsx';
 import TodoList from './TodoList.jsx';
 import SearchTodo from './SearchTodo.jsx';

@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from './rootSaga';
-import todosReducer from '../engine/todos/todosSlice.js';
+import todosReducer from '../data/todosSlice';
 
 const sagaMiddleware = createSagaMiddleware();
 
-export default configureStore({
+const store = configureStore({
     reducer: {
         todos: todosReducer,
     },
@@ -13,3 +13,5 @@ export default configureStore({
 });
 
 sagaMiddleware.run(rootSaga);
+
+export default store;
