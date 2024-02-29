@@ -1,0 +1,167 @@
+.header {
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  color: #FFFFFF;
+
+  &.desktop {
+    display: flex;
+
+    @media (max-width: 918px) {
+      display: none;
+    }
+  }
+
+  &.tablet {
+    display: none;
+
+    @media (max-width: 918px) {
+      display: flex;
+    }
+
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+
+  &.mobile {
+    display: none;
+
+    @media (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+      padding-top: 10px;
+    }
+  }
+
+  & a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+
+    &:hover {
+      color: $color-main;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (max-width: 918px) {
+    gap: 30px;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  &__link {
+    display: inline-block;
+    position: relative;
+    transition: all 0.4s ease;
+
+    @media (max-width: 600px) {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: $color-main;
+      height: 2px;
+      width: 0;
+      left: 50%;
+      bottom: -7px;
+      opacity: 1;
+      transform: translateX(-50%);
+      transition: 0.4s;
+    }
+
+    &:hover,
+    &:active,
+    &.active {
+      color: rgba($color: $color-main, $alpha: 1);
+    }
+
+    &:hover:after,
+    &:active:after,
+    &.active:after {
+      width: 100%;
+    }
+  }
+
+  &__header {
+    display: flex;
+    gap: 6px;
+    width: 100%;
+    align-items: center;
+
+    @media (max-width: 600px) {
+      justify-content: space-between;
+      padding-bottom: 20px;
+    }
+  }
+
+  & a {
+    @media (max-width: 600px) {
+      font-weight: 400;
+    }
+  }
+
+  &__lang {
+    display: flex;
+
+    & a {
+      width: 33px;
+      height: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+
+      &:hover {
+        background-color: $color-main;
+        color: #FFFFFF;
+      }
+
+      &:focus {
+        background-color: $color-main;
+        color: #FFFFFF;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+
+    @media (max-width: 918px) {
+      justify-content: flex-start;
+    }
+
+    @media (max-width: 600px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__logo {
+    @media (max-width: 600px) {
+      height: 30px;
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+  }
+}

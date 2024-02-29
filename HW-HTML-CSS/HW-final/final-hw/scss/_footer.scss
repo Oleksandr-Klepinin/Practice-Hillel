@@ -1,0 +1,130 @@
+.footer {
+    background-color: #F5F5FA;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        border-top: 2px solid #E6E6F0;
+
+        @media (max-width: 800px) {
+            padding-bottom: 0;
+            position: relative;
+        }
+
+        @media (max-width: 700px) {
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 30px;
+        }
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        gap: 21px;
+
+        @media (max-width: 700px) {
+            gap: 0;
+        }
+
+        & svg {
+            @media (max-width: 700px) {
+                display: none;
+            }
+        }
+    }
+
+    &__address {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        @media (max-width: 700px) {
+            flex-direction: column;
+        }
+    }
+
+    &__street {
+        color: #323264;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    &__map {
+        color: $color-small;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: 0.3s;
+
+        &:hover {
+            color: $color-main;
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        @media (max-width: 800px) {
+            padding-top: 40px;
+            padding-bottom: 30px;
+            position: absolute;
+            width: 100%;
+        }
+
+        @media (max-width: 700px) {
+            padding-top: 21px;
+            padding-bottom: 30px;
+            position: relative;
+            width: 100%;
+            flex-direction: column;
+        }
+    }
+
+    &__phone-number {
+        color: #46466E;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: normal;
+        text-decoration: none;
+
+        &:hover {
+            color: $color-main;
+        }
+    }
+
+    &__email {
+        color: $color-small;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: normal;
+        text-decoration: none;
+
+        transition: 0.3s;
+
+        &:hover {
+            color: $color-main;
+        }
+    }
+
+    &__copyright {
+        color: #B3B3BA;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+
+        @media (max-width: 700px) {
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+    }
+}

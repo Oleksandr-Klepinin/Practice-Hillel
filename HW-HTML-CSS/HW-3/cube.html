@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+
+        .wrapper{
+            margin: 200px;
+            perspective: 800px;
+            perspective-origin: 100px 100px;
+        }
+
+        .cube{
+            width: 200px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation-name: rotate;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+        }
+
+        .cube div {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            font-size: 3rem;
+            border: 1px solid black;
+            box-sizing: border-box;
+
+        }
+        .top{
+            background-color: yellow;
+            transform: translateY(-100px) rotateX(90deg)
+        }
+        .bottom {
+            background-color: aqua;
+            transform: translateY(100px) rotateX(-90deg);
+        }
+        .left{
+            background-color: cadetblue;
+            transform: translate(-100px) rotatey(-90deg);
+        }
+        .right {
+            background-color: red;
+            transform: translate(100px) rotateY(90deg);
+        }
+        .front {
+            background-color: orange;
+            transform: translateZ(100px);
+        }
+        .back {
+            background-color: darksalmon;
+            transform: translateZ(-100px) rotateY(180deg);
+        }
+
+        @keyframes rotate {
+            0%{
+                transform: rotateX(0) rotateY(0) rotate3d(1, 1, 1, 0deg);
+            }
+            100%{
+                transform: rotate3d(1, 1, 1, 360deg);
+            }
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="cube">
+            <div class="top"> top </div>
+            <div class="bottom">bottom</div>
+            <div class="left">left</div>
+            <div class="right">right</div>
+            <div class="front">front</div>
+            <div class="back">back</div>
+        </div>
+    </div>
+
+</body>
+</html>

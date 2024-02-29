@@ -1,0 +1,118 @@
+.footer {
+    padding-top: 92px;
+    padding-bottom: 48px;
+    background-color: #EEEEEE;
+}
+
+.footer a {
+    text-decoration: none;
+    color: black;
+}
+
+.display-b {
+    display: block;
+}
+
+.container-footer {
+    max-width: 1290px;
+    margin: 0 auto;
+    padding: 0px 15px;
+    box-sizing: border-box;
+}
+
+.footer h3 {
+    font-weight: 600;
+}
+
+.footer-main-title {
+    font-size: 2.5rem;
+    margin-bottom: 28px;
+}
+
+.small-logo {
+    margin-top: 31px;
+    margin-bottom: 11px;
+}
+
+.footer-text {
+    font-size: 1.25rem;
+    line-height: 30px;
+}
+
+.footer-read-title {
+    margin-top: 15px;
+    margin-bottom: 95px;
+    font-size: 20px;
+}
+
+.footer-read-title a:hover {
+    color: #FF6336;
+    transition: 0.3s;
+}
+
+.border {
+    background-color: #000000;
+    height: 1px;
+}
+
+.wrapper-content {
+    display: flex;
+}
+
+.wrapper-link {
+    display: flex;
+    margin-left: 11.115%;
+    flex-grow: 1;
+}
+
+.link-title {
+    font-size: 1.25rem;
+    margin-bottom: 21px;
+}
+
+.footer-link-list li {
+    font-size: 14px;
+    transition: 0.5s;
+}
+
+.footer-link-list li:hover a {
+    color: #FF6336;
+    transition: 0.3s;
+}
+
+.footer-link-list li:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.wrapper-link div:nth-child(2) {
+    margin-left: 13.8%;
+    margin-right: 6.25%;
+}
+
+.wrapper-link div:nth-child(3) {
+    margin-right: 7.57%;
+}
+
+.under-border {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 53px;
+    padding-right: 76px;
+}
+
+.under-border p {
+    color: #000;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+}
+
+.under-border-logo {
+    display: flex;
+}
+
+.under-border-logo p {
+    max-width: 301px;
+    padding-left: 14px;
+}

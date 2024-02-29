@@ -1,0 +1,123 @@
+.top-line__list {
+    text-align: center;
+}
+
+.top-line__item {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    margin: 17px 30px 16px 0;
+}
+
+.top-line__item:last-of-type {
+    margin-right: 0;
+}
+
+.top-line__link {
+    color: #333333;
+}
+
+.top-line__link:hover,
+.top-line__link:active {
+    color: #F13C6E;
+    transition: 0.3s;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.logo {
+    background-color: white;
+    border-bottom: 1px solid #EFEFEF;
+}
+
+.logo__content {
+    display: inline-block;
+    margin: 20px 0;
+}
+
+.logo__link {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.img__logo {
+    background-color: white;
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+}
+
+.img__brand {
+    background-color: white;
+    width: 158px;
+}
+
+.phoneNumber {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: black;
+    margin: 50px 40px 51px 0;
+}
+
+.phoneNumber:hover,
+.phoneNumber:active {
+    color: #F13C6E;
+    transition: 0.3s;
+}
+
+.callback {
+    margin: 40px 0;
+    background-color: white;
+    border: 2px solid #F13C6E;
+    border-radius: 40px;
+    width: 170px;
+    height: 40px;
+    color: black;
+    font-weight: 400;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.callback:hover {
+    background-color: #F13C6E;
+    color: white;
+    font-weight: 700;
+}
+
+.nav {
+    background-color: white;
+}
+
+.nav__list {
+    text-align: center;
+}
+
+.nav__item {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    margin: 30px 40px 30px 0;
+}
+
+.nav__item:last-of-type {
+    margin-right: 0;
+}
+
+.nav__link {
+    color: black;
+}
+
+.nav__link:hover,
+.nav__link:active {
+    color: #F13C6E;
+    transition: 0.3s;
+}

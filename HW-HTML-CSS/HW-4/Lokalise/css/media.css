@@ -1,0 +1,437 @@
+@media (max-width: 1200px) {
+    .container-big {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .nav-list {
+        padding-right: 15px;
+        gap: 25px;
+    }
+
+    .header-btn {
+        flex-direction: column;
+    }
+
+    .log-in {
+        margin-bottom: 10px;
+    }
+
+    .header-logo {
+        padding-right: 30px;
+    }
+
+    .localization-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .localization-title {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .localization-img {
+        padding: 15px;
+        margin: 0;
+        height: 500px;
+        width: auto;
+    }
+
+    .companies-wrapper-img {
+        gap: 5px;
+    }
+
+    .services {
+        margin-top: 80px;
+        margin-bottom: 80px;
+        gap: 80px;
+    }
+
+    .service-wrapper {
+        flex-direction: column;
+    }
+
+    .service-wrapper:nth-child(2n) {
+        flex-direction: column;
+    }
+
+    .service-title {
+        text-align: center;
+    }
+
+    .service-img {
+        margin-top: 20px;
+    }
+
+    .time {
+        margin: 30px 0;
+        max-width: 500px;
+    }
+
+    .quality {
+        margin: 30px 0;
+        max-width: 500px;
+    }
+
+    .developers {
+        margin: 30px 0;
+        max-width: 500px;
+    }
+
+    .localize-wrapper-title {
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+
+    .localize-wrapper-items {
+        padding-bottom: 50px;
+        row-gap: 40px;
+    }
+
+    .productivity-wrapper-title {
+        padding-top: 50px;
+        padding-bottom: 0;
+        text-align: center;
+    }
+
+    .productivity-wrapper-items {
+        padding-bottom: 50px;
+    }
+
+    .quote-wrapper-items {
+        padding-bottom: 50px;
+    }
+
+    .quote-text {
+        padding-right: 15px;
+    }
+
+    .portrait {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .software-wrapper-items {
+        flex-direction: column;
+        padding: 50px 0 50px 0;
+    }
+
+    .software-wrapper-title {
+        text-align: center;
+        border-right: 0;
+        border-bottom: 1px solid #000000;
+    }
+
+    .software-wrapper-title h3 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .software-wrapper-rates {
+        padding-top: 40px;
+    }
+
+    .tools-wrapper h2 {
+        font-size: 50px;
+    }
+
+    .tools-wrapper {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .tools-img {
+        height: 330px;
+    }
+
+    .try-wrapper-items {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .wrapper-link {
+        margin-left: 3%;
+    }
+
+    .wrapper-link div:nth-child(2) {
+        margin-left: 7%;
+        margin-right: 3%;
+    }
+
+    .wrapper-link div:nth-child(3) {
+        margin-right: 5%;
+    }
+
+    .footer {
+        padding-top: 50px;
+    }
+
+    .footer-read-title {
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        display: block;
+    }
+
+    .nav-list {
+        display: block;
+    }
+
+    .localization-title {
+        font-size: 42px;
+        margin-top: 20px;
+    }
+
+    .localization-text {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
+    .localization-img {
+        width: auto;
+        height: 200px;
+    }
+
+    .localization-btn {
+        margin-top: 20px;
+    }
+
+    .localization-try-it {
+        margin-right: 5px;
+        width: 120px;
+        height: 45px;
+    }
+
+    .localization-book {
+        width: 120px;
+        height: 45px;
+    }
+
+    .companies-wrapper {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .companies-wrapper-title {
+        margin-bottom: 15px;
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    .companies-wrapper-img {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .services {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        gap: 30px;
+    }
+
+    .service-title {
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    .service-img {
+        height: 275px;
+    }
+
+    .process {
+        margin: 10px 0;
+        max-width: 500px;
+    }
+
+    .time {
+        margin: 10px 0;
+        max-width: 500px;
+    }
+
+    .quality {
+        margin: 10px 0;
+        max-width: 500px;
+    }
+
+    .developers {
+        margin: 10px 0;
+        max-width: 500px;
+    }
+
+    .localize-wrapper-title {
+        padding-top: 20px;
+        padding-bottom: 0;
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    .localize-wrapper-items {
+        row-gap: 20px;
+    }
+
+    .productivity-wrapper-title {
+        font-size: 40px;
+        padding-top: 20px;
+        line-height: 50px;
+    }
+
+    .productivity-wrapper-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .productivity-wrapper-img {
+        max-width: 440px;
+        text-align: center;
+    }
+
+    .managers-img {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .developers-img {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .translators-img {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .quote-wrapper-items {
+        flex-direction: column;
+        padding-bottom: 0;
+    }
+
+    .quote-text {
+        font-size: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .portrait {
+        height: 280px;
+        padding-top: 20px;
+    }
+
+    .quote-text {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .software-wrapper-items {
+        padding: 20px 0 20px 0;
+    }
+
+    .software-wrapper-title {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .software-wrapper-rates {
+        flex-direction: column;
+        gap: 15px;
+        width: auto;
+    }
+
+    .tools-wrapper h2 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    .tools-wrapper {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .tools-img {
+        height: 135px;
+    }
+
+    .try-wrapper-items {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .try-wrapper-title {
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    .try-wrapper-text {
+        padding-bottom: 30px;
+    }
+
+    .footer {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .wrapper-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-main-title {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .footer-read-title {
+        font-size: 16px;
+        margin-bottom: 50px;
+    }
+
+    .display-b {
+        height: 285px;
+    }
+
+    .small-logo {
+        height: 50px;
+    }
+
+    .wrapper-link {
+        flex-direction: column;
+        gap: 30px;
+        margin-left: 0;
+    }
+
+    .wrapper-link div:nth-child(2) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .wrapper-link div:nth-child(3) {
+        margin-right: 0;
+    }
+
+    .wrapper-link div:nth-child(4) {
+        padding-bottom: 30px;
+    }
+
+    .under-border-logo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .under-border {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding-top: 30px;
+        padding-right: 0;
+    }
+
+    .under-border-logo p {
+        padding-left: 0;
+    }
+}
